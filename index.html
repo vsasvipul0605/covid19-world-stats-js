@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- mapbox -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <!-- custom -->
+    <link rel="icon" href="assets/page-icon/virus.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="nav.css" />
+
+    
+    <title>covid19</title>
+  </head>
+  <body>
+    <div class="ct" id="t1">
+      <div class="ct" id="t2">
+        <div class="ct" id="t3">
+          <div class="ct" id="t4">
+            <ul id="menu">
+              <a href="#t1"
+                ><li id="one">
+                  <img
+                    class="nav-icon"
+                    src="assets/nav-icons/world.png"
+                    height="50px"
+                    width="50px"
+                  /></li
+              ></a>
+              <a href="#t2"
+                ><li id="two">
+                  <img
+                    class="nav-icon"
+                    src="assets/nav-icons/information.png"
+                    height="50px"
+                    width="50px"
+                  /></li
+              ></a>
+              <a href="#t3"
+                ><li id="three">
+                  <img
+                    class="nav-icon"
+                    src="assets/nav-icons/rules.png"
+                    height="50px"
+                    width="50px"
+                  /></li
+              ></a>
+              <a href="#t4"
+                ><li id="four">
+                  <img
+                    class="nav-icon"
+                    src="assets/nav-icons/person.png"
+                    height="50px"
+                    width="50px"
+                  /></li
+              ></a>
+            </ul>
+            <div class="page" id="map"></div>
+            <div class="page" id="p2">
+                <div class="contain">
+                    <div class="table-responsive info-page">
+                      <br>
+                        <h1 style="text-align: center;">Cases Worldwide</h1>
+                        <hr style="background-color: aliceblue; width: 85%;"><br>
+                        <div class="row text-center">
+                            <div class="col-sm-3" style="color:#FF073A;" >
+                                <h5>Confirmed</h5>
+                                <h4 id="today_confirmed"></h4>
+                                <h1 class="grid" id="total_confirmed"></h1>
+                                <hr class="hr-color" >
+                            </div>
+                            <div class="col-sm-3" style="color:#0174F1;" >
+                                <h5>Active</h5>
+                                <h4 id="today_active"></h4>
+                                <h1 class="grid" id="total_active"></h1>
+                                <hr class="hr-color" >
+                            </div>
+                            <div class="col-sm-3" style="color:#28A745;" >
+                                <h5>Recovered</h5>
+                                <h4 id="today_recovered"></h4>
+                                <h1 class="grid" id="total_recovered"></h1>
+                                <hr class="hr-color" >
+                            </div>
+                            <div class="col-sm-3" style="color:#6C757D;"  >
+                                <h5>Deaths</h5>
+                                <h4 id="today_deaths"></h4>
+                                <h1 class="grid" id="total_deaths"></h1>
+                                <hr class="hr-color" >
+                            </div>
+                        </div>
+                        <br>
+                        <div id="case_table" class="text-center">
+                            <table style="display: block; overflow-y: scroll; height: 77vh;" class="table table-bordered table-striped" id="world_table">
+                                <tr>
+                                    <th id="name">Name</th>
+                                    <th>Confirmed</th>
+                                    <th>Active</th>
+                                    <th>Recovered</th>
+                                    <th>Deaths</th>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="page" id="p3">
+              <br>
+                <span style="color: black; text-align: center; max-width: 90%;" class="title">Follow these Do's & Don'ts</span>
+                <br>
+                <div class="table-responsive">
+                <table class="rules-table table table-bordered">
+                    <tr class="table-light">
+                      <th>DO's  <img height="50px" width="50px" src="assets/page-icon/tick.png"></th>
+                      <th>DON'ts  <img height="50px" width="50px" src="assets/page-icon/close.png"></th>
+                    </tr>
+                    <tr>
+                      <td class="bg-success">To maintain personal hygiene and physical distancing.</td>
+                      <td class="bg-danger">Shake hands</td>
+                    </tr>
+                    <tr>
+                      <td class="bg-success">To practice frequent hand washing. Wash hands with soap and water or use alcohol-based hand rub. Wash hands even if they are visibly clean.</td>
+                      <td class="bg-danger">Have a close contact with anyone, if you're experiencing cough and fever.</td>
+                    </tr>
+                    <tr>
+                      <td class="bg-success">To cover your nose and mouth with handkerchief/tissue while sneezing and coughing.</td>
+                      <td class="bg-danger">Touch your eyes, nose and mouth.</td>
+                    </tr>
+                    <tr>
+                      <td class="bg-success">To throw used tissues into closed bins immediately after use.</td>
+                      <td class="bg-danger">Sneeze or couugh into palms of your hands.</td>
+                    </tr>
+                    <tr>
+                      <td class="bg-success">To maintain a safe distance from persons during interaction, expecially with those having flu-like symptoms.</td>
+                      <td class="bg-danger">Spit in public.</td>
+                    </tr>
+                    <tr>
+                      <td class="bg-success">To sneeze in the inner side of your elbow and not to cough into the palms of your hands.</td>
+                      <td class="bg-danger">Travel unnecessarily, particularly to any affected region.</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-success">To take their temperature regularly and check for respiratory symptoms. To see a doctor if you feel unwell (fever, difficulty in breathing and coughing). While visiting doctor, wear a mask/cloth to cover your mouth and nose.</td>
+                        <td class="bg-danger">Participate in large gatherings, include sitting in group at canteens.</td>
+                    </tr>
+                  </table>
+                  </div>
+            </div>
+            <div class="page" id="p4">
+              <section class="icon">
+                <img src="assets/page-icon/about.png" height="100px" width="100px">
+                <hr>
+                <p class="hint">
+                  <a style="text-decoration: none;" href="#" target="_blank"
+                    >Made with 🤍  by                    
+                  <a style="text-decoration: none;" href="https://github.com/vsasvipul0605" target="_blank"
+                    >Vipul Sinha</a
+                  >
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Anime.js-->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
